@@ -1,4 +1,4 @@
-﻿
+﻿using Core.Persistence.Dynamic;
 using Core.Persistence.Paging;
 using Microsoft.EntityFrameworkCore.Query;
 using System;
