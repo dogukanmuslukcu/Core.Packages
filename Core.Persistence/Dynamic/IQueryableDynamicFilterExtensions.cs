@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Core.Persistence.Dynamic;
 
-public static  class IQueryableDynamicFilterExtensions
+public static class IQueryableDynamicFilterExtensions
 {
     private static readonly string[] _orders = { "asc", "desc" };
     private static readonly string[] _logics = { "and", "or" };
