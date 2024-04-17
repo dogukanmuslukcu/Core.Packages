@@ -123,9 +123,9 @@ public class EfRepositoryBase<TEntity, TEntityId, TContext> : IAsyncRepository<T
         return await queryable.ToPaginateAsync(index, size, cancellationToken);
     }
 
-    public  IQueryable<TEntity> Query()
+    public IQueryable<TEntity> Query()
     {
-         return Context.Set<TEntity>();
+        return Context.Set<TEntity>();
     }
 
     public async Task<TEntity> UpdateAsync(TEntity entity)
@@ -138,7 +138,7 @@ public class EfRepositoryBase<TEntity, TEntityId, TContext> : IAsyncRepository<T
 
     public async Task<ICollection<TEntity>> UpdateRangeAsync(ICollection<TEntity> entities)
     {
-        foreach (var entity in entities) 
+        foreach (var entity in entities)
         {
             entity.UpdatedDate = DateTime.UtcNow;
         }
