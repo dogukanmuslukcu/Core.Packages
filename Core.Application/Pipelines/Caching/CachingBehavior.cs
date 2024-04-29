@@ -16,7 +16,7 @@ public class CachingBehavior<TRequest, TResponse> : IPipelineBehavior<TRequest, 
     private readonly CacheSettings _cacheSettings;
     private readonly IDistributedCache _cache;
 
-    public CachingBehavior(CacheSettings cacheSettings, IDistributedCache cache,IConfiguration configuration)
+    public CachingBehavior(IDistributedCache cache,IConfiguration configuration)
     {
         _cacheSettings = configuration.GetSection("CacheSettings").Get<CacheSettings>() ?? throw new ArgumentNullException(nameof(configuration));
         _cache = cache;
