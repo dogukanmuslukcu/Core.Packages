@@ -1,6 +1,5 @@
 ﻿using MediatR;
 using Microsoft.Extensions.Caching.Distributed;
-using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,9 +15,9 @@ public class CachingBehavior<TRequest, TResponse> : IPipelineBehavior<TRequest, 
     private readonly CacheSettings _cacheSettings;
     private readonly IDistributedCache _cache;
 
-    public CachingBehavior(CacheSettings cacheSettings, IDistributedCache cache,IConfiguration configuration)
+    public CachingBehavior(CacheSettings cacheSettings, IDistributedCache cache)
     {
-        _cacheSettings = configuration.GetSection("CacheSettings").Get<CacheSettings>() ?? throw new ArgumentNullException(nameof(configuration));
+        _cacheSettings = cacheSettings;
         _cache = cache;
     }
 
