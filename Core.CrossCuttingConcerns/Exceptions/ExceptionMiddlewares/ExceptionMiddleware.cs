@@ -15,10 +15,10 @@ public class ExceptionMiddleware
 {
     private readonly RequestDelegate _next;
     private readonly HttpExceptionHandler _httpExceptionHandler;
-    private readonly HttpContextAccessor _contextAccessor;
+    private readonly IHttpContextAccessor _contextAccessor;
     private readonly LoggerServiceBase _loggerService;
 
-    public ExceptionMiddleware(RequestDelegate next, HttpContextAccessor contextAccessor, LoggerServiceBase loggerService)
+    public ExceptionMiddleware(RequestDelegate next, IHttpContextAccessor contextAccessor, LoggerServiceBase loggerService)
     {
         _next = next;
         _httpExceptionHandler = new HttpExceptionHandler();
