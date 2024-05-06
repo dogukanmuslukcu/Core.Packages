@@ -43,7 +43,7 @@ public class ExceptionMiddleware
     {
         List<LogParameter> logParameters = new()
         {
-            new LogParameter{Type =context.GetType().Name,Value = exception.ToString }
+            new LogParameter{Type =context.GetType().Name,Value = exception.ToString()}
         };
         LogDetailWithException logDetail = new LogDetailWithException()
         {
