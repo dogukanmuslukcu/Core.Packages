@@ -10,7 +10,7 @@ namespace Core.Security.Entities;
 public class OperationClaim : Entity<int>
 {
     public string Name { get; set; }
-    public virtual ICollection<UserOperationClaim> OperationClaims { get; set; } = null;
+    public virtual ICollection<UserOperationClaim> OperationClaims { get; set; } = null!;
     public OperationClaim()
     {
         Name = string.Empty;
